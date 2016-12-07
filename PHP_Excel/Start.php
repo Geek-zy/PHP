@@ -17,7 +17,7 @@ $objPHPExcel->getProperties()->setCategory("Test result file");
 
 //添加数据 可以指定位置  
 $objPHPExcel->setActiveSheetIndex(0);  
-$objPHPExcel->getActiveSheet()->setCellValue('A1', "PID");
+$objPHPExcel->getActiveSheet()->setCellValue('A1', "编号");
 $objPHPExcel->getActiveSheet()->setCellValue('B1', "日期");  
 $objPHPExcel->getActiveSheet()->setCellValue('C1', "姓名");  
 $objPHPExcel->getActiveSheet()->setCellValue('D1', "性别");  
