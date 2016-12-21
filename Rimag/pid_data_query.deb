@@ -1,0 +1,6 @@
+<?php
+
+include "bin/PID.php";
+pid_data_query("$argv[1]");
+
+?>

@@ -1,0 +1,6 @@
+<?php
+
+include "bin/TEL.php";
+tel_data_query("$argv[1]");
+
+?>

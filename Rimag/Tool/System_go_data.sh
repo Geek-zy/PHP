@@ -1,0 +1,1 @@
+/opt/dcm4che3/bin/findscu -c CNS@10.3.1.36:6105 -m StudyDate=20151217-20151218 -m ModalitiesInStudy=MR | grep -E '(0020,0010)|(0008,1030)|(0010,0020)|(0020,000D)' | awk 'ORS=NR%4?" ":"\n"{print}'| awk '{print $3,$4,$8,$12,$16}' | tr -d "[]" > Data_MR_CT.log

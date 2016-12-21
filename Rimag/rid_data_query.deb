@@ -1,0 +1,6 @@
+<?php
+
+include "bin/RID.php";
+rid_data_query("$argv[1]");
+
+?>
