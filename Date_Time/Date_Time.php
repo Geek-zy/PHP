@@ -1,11 +1,13 @@
 <?php
+
 //设置时区(中国标准时间)
 date_default_timezone_set('PRC');
 
-/*时间格式的时间
-echo date('Y-m-d H:i:s');
-时间戳格式的时间
-echo time();
+/*
+ * 时间格式的时间
+ * echo date('Y-m-d H:i:s');
+ * 时间戳格式的时间
+ * echo time();
 */
 
 $Date_Time = date('s') . "\n";
@@ -28,3 +30,4 @@ else if ($Date_Time >= 40 && $Date_Time <= 50)
 else 
 	echo $Date_Time . "60-0 秒段\n";
 ?>
+
