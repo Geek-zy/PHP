@@ -1,0 +1,10 @@
+select study.pk AS STUDY_KEY, patient.pat_id AS PATIENT_ID, patient.pat_name AS PATIENT_NAME, patient.pat_sex AS PATIENT_SEX, year( NOW( ) ) - year( patient.pat_birthdate ) AS PATIENT_AGE1, patient.pat_custom1 AS PATIENT_AGE2, study.num_series AS SERIES_COUNT, study.num_instances AS INSTANCE_COUNT, study.mods_In_study AS MODALITIES, study.created_time AS CREATION_DTTM, study.study_datetime AS STUDY_DTTM, series.institution AS INSTITUTION, study.study_iuid AS STUDY_INSTANCE_UID, series.src_aet AS SOURCE_AETITLE, study.accession_no as ACCESSION_NO, study.study_id as STUDY_ID
+                FROM study
+                INNER JOIN series ON series.study_fk = study.pk
+                INNER JOIN patient ON study.patient_fk = patient.pk
+                WHERE study.mods_In_study IN ( 'CT','CT\\SR','PR\\MR', 'SR','MR','MR\\PR','DX','DR','CR','PR','MR\\SR' )
+                AND series.src_aet LIKE '%RJSRMYYMR'
+                AND study.study_datetime>='2015-09-20 12:50:07' 
+                and study.study_datetime<='2015-09-23 12:50:07'
+                GROUP BY series.study_fk
+                ORDER BY study.study_datetime DESC
